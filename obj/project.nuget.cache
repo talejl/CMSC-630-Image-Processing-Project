@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "JUOYxcSIdHXDS2m9p0f+UJl0GTaHsc506Typi7g7METrDyNRbsO8SqJOZ/1KQNkrhZzXF+KZfv9SBC10asSOaA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\TAL045\\Desktop\\Grad School\\CMSC 630\\ImageProcessingProject\\TalejImageProcessorCMSC630\\Talej Image Processor CMSC 630\\Talej Image Processor CMSC 630.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\TAL045\\.nuget\\packages\\system.windows.forms.datavisualization\\1.0.0-prerelease.20110.1\\system.windows.forms.datavisualization.1.0.0-prerelease.20110.1.nupkg.sha512"
+  ],
+  "logs": []
+}
