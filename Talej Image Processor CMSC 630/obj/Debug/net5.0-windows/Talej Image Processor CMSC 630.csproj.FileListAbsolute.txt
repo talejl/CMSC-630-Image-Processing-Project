@@ -1,0 +1,8 @@
+C:\Users\TAL045\Desktop\Grad School\CMSC 630\ImageProcessingProject\TalejImageProcessorCMSC630\Talej Image Processor CMSC 630\obj\Debug\net5.0-windows\Talej Image Processor CMSC 630.csproj.AssemblyReference.cache
+C:\Users\TAL045\Desktop\Grad School\CMSC 630\ImageProcessingProject\TalejImageProcessorCMSC630\Talej Image Processor CMSC 630\obj\Debug\net5.0-windows\Talej_Image_Processor_CMSC_630.Form1.resources
+C:\Users\TAL045\Desktop\Grad School\CMSC 630\ImageProcessingProject\TalejImageProcessorCMSC630\Talej Image Processor CMSC 630\obj\Debug\net5.0-windows\Talej_Image_Processor_CMSC_630.Properties.Resources.resources
+C:\Users\TAL045\Desktop\Grad School\CMSC 630\ImageProcessingProject\TalejImageProcessorCMSC630\Talej Image Processor CMSC 630\obj\Debug\net5.0-windows\Talej Image Processor CMSC 630.csproj.GenerateResource.cache
+C:\Users\TAL045\Desktop\Grad School\CMSC 630\ImageProcessingProject\TalejImageProcessorCMSC630\Talej Image Processor CMSC 630\obj\Debug\net5.0-windows\Talej Image Processor CMSC 630.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TAL045\Desktop\Grad School\CMSC 630\ImageProcessingProject\TalejImageProcessorCMSC630\Talej Image Processor CMSC 630\obj\Debug\net5.0-windows\Talej Image Processor CMSC 630.AssemblyInfoInputs.cache
+C:\Users\TAL045\Desktop\Grad School\CMSC 630\ImageProcessingProject\TalejImageProcessorCMSC630\Talej Image Processor CMSC 630\obj\Debug\net5.0-windows\Talej Image Processor CMSC 630.AssemblyInfo.cs
+C:\Users\TAL045\Desktop\Grad School\CMSC 630\ImageProcessingProject\TalejImageProcessorCMSC630\Talej Image Processor CMSC 630\obj\Debug\net5.0-windows\Talej Image Processor CMSC 630.csproj.CoreCompileInputs.cache
