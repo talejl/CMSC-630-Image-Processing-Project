@@ -204,7 +204,7 @@
             this.edgeDetectionSelectionBox = new System.Windows.Forms.ComboBox();
             this.segmentationBox = new System.Windows.Forms.GroupBox();
             this.clusterInputBox = new System.Windows.Forms.TextBox();
-            this.Clusters = new System.Windows.Forms.Label();
+            this.K = new System.Windows.Forms.Label();
             this.segmentationSelectionBox = new System.Windows.Forms.ComboBox();
             this.morphGroupBox = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -1812,7 +1812,7 @@
             // segmentationBox
             // 
             this.segmentationBox.Controls.Add(this.clusterInputBox);
-            this.segmentationBox.Controls.Add(this.Clusters);
+            this.segmentationBox.Controls.Add(this.K);
             this.segmentationBox.Controls.Add(this.segmentationSelectionBox);
             this.segmentationBox.Location = new System.Drawing.Point(1442, 12);
             this.segmentationBox.Name = "segmentationBox";
@@ -1828,14 +1828,14 @@
             this.clusterInputBox.Size = new System.Drawing.Size(108, 23);
             this.clusterInputBox.TabIndex = 2;
             // 
-            // Clusters
+            // K
             // 
-            this.Clusters.AutoSize = true;
-            this.Clusters.Location = new System.Drawing.Point(43, 51);
-            this.Clusters.Name = "Clusters";
-            this.Clusters.Size = new System.Drawing.Size(49, 15);
-            this.Clusters.TabIndex = 1;
-            this.Clusters.Text = "Clusters";
+            this.K.AutoSize = true;
+            this.K.Location = new System.Drawing.Point(64, 52);
+            this.K.Name = "K";
+            this.K.Size = new System.Drawing.Size(14, 15);
+            this.K.TabIndex = 1;
+            this.K.Text = "K";
             // 
             // segmentationSelectionBox
             // 
@@ -2208,7 +2208,7 @@
         private GroupBox segmentationBox;
         private ComboBox segmentationSelectionBox;
         private TextBox clusterInputBox;
-        private Label Clusters;
+        private Label K;
         private GroupBox morphGroupBox;
         private ComboBox morphSelectionBox;
         private Label label12;

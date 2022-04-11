@@ -112,6 +112,8 @@ namespace Talej_Image_Processor_CMSC_630
         }
         public static Bitmap Superpixels(Bitmap grayscaleImage, int numberSuperPixels)
         {
+            // Based on https://www.iro.umontreal.ca/~mignotte/IFT6150/Articles/SLIC_Superpixels.pdf
+            //Buggy code.....will randomly die for random specified number of superpixels
             //Initialize width and height
             int width = grayscaleImage.Width;
             int height = grayscaleImage.Height;
@@ -132,7 +134,7 @@ namespace Talej_Image_Processor_CMSC_630
             int samplingInterval = (int)Math.Floor(Math.Sqrt((double)numberTotalPixels / numberSuperPixels));
 
 
-            //Create 
+            //Create array of arrays
             int[][] means = new int[numberSuperPixels][];
 
             //Initialize placeholder superpixel value
@@ -148,7 +150,7 @@ namespace Talej_Image_Processor_CMSC_630
                     //calculate position
                     int position =  y * grayscaleImageData.Stride + x * 3;
 
-                    //compute lowest gradient
+                    //Calculate the lowest gradient
                     int lowestGradient = 99999;
                     for (int i = -1; i <= 1; i++)
                     {
@@ -173,11 +175,6 @@ namespace Talej_Image_Processor_CMSC_630
                             }
                         }
                     }
-
-                    modifiedImageBuffer[means[superPixel][1] * 3 + means[superPixel][2] * grayscaleImageData.Stride] = 255;
-                    modifiedImageBuffer[means[superPixel][1] * 3 + means[superPixel][2] * grayscaleImageData.Stride + 1] = 255;
-                    modifiedImageBuffer[means[superPixel][1] * 3 + means[superPixel][2] * grayscaleImageData.Stride + 2] = 255;
-
                     if (superPixel < numberSuperPixels - 1)
                     {
                         superPixel++;
@@ -185,6 +182,7 @@ namespace Talej_Image_Processor_CMSC_630
                 }
             }
 
+            //Need labels and distances for superpixel calculation
             int[] labels = new int[byteSize];
             double[] distances = new double[byteSize];
             for (int i = 0; i < byteSize; i += 3)
@@ -195,29 +193,30 @@ namespace Talej_Image_Processor_CMSC_630
 
             double error = new double();
             double cc = 20;
-            while (true)
+            bool converge = false;
+            while (converge == false)
             {
                 int[][] newMeans = new int[numberSuperPixels][];
 
-                //assign samples to clusters
+                //assign samples to clusters by iterating over superpixels
                 for (int i = 0; i < numberSuperPixels; i++)
                 {
-                    int m_pos = means[i][1] * 3 + means[i][2] * grayscaleImageData.Stride;
-                    int xe = 2 * samplingInterval + means[i][1];
-                    int xs = means[i][1] - 2 * samplingInterval;
-                    int ye = 2 * samplingInterval + means[i][2];
-                    int ys = means[i][2] - 2 * samplingInterval;
+                    int x1 = 2 * samplingInterval + means[i][1];
+                    int x2 = means[i][1] - 2 * samplingInterval;
+                    int y1 = 2 * samplingInterval + means[i][2];
+                    int y2 = means[i][2] - 2 * samplingInterval;
 
-                    for (int x = (xs < 0 ? 0 : xs); x < ((xe < width) ? xe : width); x++)
+                    //Calculate distance from samples to centroids
+                    for (int x = (x2 < 0 ? 0 : x2); x < ((x1 < width) ? x1 : width); x++)
                     {
-                        for (int y = (ys < 0 ? 0 : ys); y < (ye < height ? ye : height); y++)
+                        for (int y = (y2 < 0 ? 0 : y2); y < (y1 < height ? y1 : height); y++)
                         {
                             int position = x * 3 + y * grayscaleImageData.Stride;
-                            double ds = Math.Sqrt(Math.Pow(x - means[i][1], 2) + Math.Pow(y - means[i][2], 2));
-                            double dc = Math.Sqrt(Math.Pow(originalImageBuffer[position] - means[i][0], 2)
+                            double distanceSample = Math.Sqrt(Math.Pow(x - means[i][1], 2) + Math.Pow(y - means[i][2], 2));
+                            double distanceCenter = Math.Sqrt(Math.Pow(originalImageBuffer[position] - means[i][0], 2)
                                 + Math.Pow(originalImageBuffer[position + 1] - means[i][0], 2)
                                 + Math.Pow(originalImageBuffer[position + 2] - means[i][0], 2));
-                            double distance = dc + (cc / samplingInterval) * ds;
+                            double distance = distanceCenter + (cc / samplingInterval) * distanceSample;
                             if (distance < distances[position])
                             {
                                 distances[position] = distance;
@@ -227,7 +226,7 @@ namespace Talej_Image_Processor_CMSC_630
                     }
                 }
 
-                //compute new means
+                //Calculate New Means
                 for (int i = 0; i < numberSuperPixels; i++)
                 {
                     newMeans[i] = new int[3];
@@ -253,23 +252,25 @@ namespace Talej_Image_Processor_CMSC_630
                     }
                 }
 
-                //compute error
-                double new_error = 0;
+                //Calculate error, needed to threshold 
+                double newError = 0;
                 for (int i = 0; i < numberSuperPixels; i++)
                 {
-                    new_error += (int)Math.Sqrt(Math.Pow(means[i][0] - newMeans[i][0], 2)
+                    newError += (int)Math.Sqrt(Math.Pow(means[i][0] - newMeans[i][0], 2)
                         + Math.Pow(means[i][1] - newMeans[i][1], 2)
                         + Math.Pow(means[i][2] - newMeans[i][2], 2));
                     means[i] = newMeans[i];
                 }
 
-                if (error < new_error)
+                //Exit loop when convergence
+                if (error < newError)
                 {
-                    break;
+                    converge = true;
                 }
+                //Continue
                 else
                 {
-                    error = new_error;
+                    error = newError;
                 }
             }
 

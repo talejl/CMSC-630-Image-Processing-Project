@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TAL045\\Desktop\\Grad School\\CMSC 630\\ImageProcessingProject\\CMSC-630-Image-Processing\\Talej Image Processor CMSC 630\\Talej Image Processor CMSC 630.csproj": {}
+    "C:\\Users\\TAL045\\Desktop\\Grad School\\CMSC 630\\ImageProcessingProject\\CMSC-630-Image-Processing-Project\\Talej Image Processor CMSC 630\\Talej Image Processor CMSC 630.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TAL045\\Desktop\\Grad School\\CMSC 630\\ImageProcessingProject\\CMSC-630-Image-Processing\\Talej Image Processor CMSC 630\\Talej Image Processor CMSC 630.csproj": {
+    "C:\\Users\\TAL045\\Desktop\\Grad School\\CMSC 630\\ImageProcessingProject\\CMSC-630-Image-Processing-Project\\Talej Image Processor CMSC 630\\Talej Image Processor CMSC 630.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TAL045\\Desktop\\Grad School\\CMSC 630\\ImageProcessingProject\\CMSC-630-Image-Processing\\Talej Image Processor CMSC 630\\Talej Image Processor CMSC 630.csproj",
+        "projectUniqueName": "C:\\Users\\TAL045\\Desktop\\Grad School\\CMSC 630\\ImageProcessingProject\\CMSC-630-Image-Processing-Project\\Talej Image Processor CMSC 630\\Talej Image Processor CMSC 630.csproj",
         "projectName": "Talej Image Processor CMSC 630",
-        "projectPath": "C:\\Users\\TAL045\\Desktop\\Grad School\\CMSC 630\\ImageProcessingProject\\CMSC-630-Image-Processing\\Talej Image Processor CMSC 630\\Talej Image Processor CMSC 630.csproj",
+        "projectPath": "C:\\Users\\TAL045\\Desktop\\Grad School\\CMSC 630\\ImageProcessingProject\\CMSC-630-Image-Processing-Project\\Talej Image Processor CMSC 630\\Talej Image Processor CMSC 630.csproj",
         "packagesPath": "C:\\Users\\TAL045\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TAL045\\Desktop\\Grad School\\CMSC 630\\ImageProcessingProject\\CMSC-630-Image-Processing\\Talej Image Processor CMSC 630\\obj\\",
+        "outputPath": "C:\\Users\\TAL045\\Desktop\\Grad School\\CMSC 630\\ImageProcessingProject\\CMSC-630-Image-Processing-Project\\Talej Image Processor CMSC 630\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
