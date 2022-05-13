@@ -1,0 +1,26 @@
+#INPUT: Where cancer cell images are located
+INPUT = "C:\\ca_smears"
+
+#Filter on only BMPs
+FILE_EXTENSION = ".BMP"
+
+#OUTPUT: Where the extracted features will written to
+OUTPUT = "C:\\Output"
+
+#FEATURES_CSV: Name of the csv of extracted features
+FEATURES_CSV = "extracted_features.csv" 
+
+#Color channel selection
+COLOR_CHANNEL = "green"
+
+#Cross validation folds 
+N_FOLDS = 10
+
+#Threads to utilize
+THREADS = 12
+
+#Size of window for performing erosion and dilation. Cannot be 0
+OPENING_WINDOW = 1
+
+#Max K. Cannot be 0
+MAX_K = 10
